@@ -1,10 +1,14 @@
-# This example logs a user in to rubyforge and prints out the body of the
-# page after logging the user in.
+# Whatfetcher
+#  alex standke
+#
+# Fetches the most recent torrents in your default torrent view page.
+#
+# Run with 'ruby whatfetcher.rb USERNAME PASSWORD'
+
 require 'rubygems'
 require 'mechanize'
 require 'logger'
 
-# Create a new mechanize object
 mech = Mechanize.new
 
 # Login
