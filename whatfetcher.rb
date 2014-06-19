@@ -23,10 +23,10 @@ page = mech.click page.link_with(:text => /Torrents/i) # Click the login link
 # Download the torrents
 page.links_with(text: 'DL').each do |l|
   torrent = mech.click l
-  if File.exists?(torrent.filename)
+  if File.exists?('torrents/' + torrent.filename)
     puts "Skipping #{torrent.filename}"
   else
     puts "Downloading #{torrent.filename}"
-    File.open(torrent.filename, 'wb') {|f| f << torrent.body}
+    File.open('torrents/' + torrent.filename, 'wb') {|f| f << torrent.body}
   end
 end
