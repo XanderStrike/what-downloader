@@ -5,6 +5,11 @@
 #
 # Run with 'ruby whatfetcher.rb USERNAME PASSWORD'
 
+if ARGV[0].nil? || ARGV[1].nil?
+  puts "Run with 'ruby orderfetcher.rb USERNAME PASSWORD'"
+  exit
+end
+
 require 'rubygems'
 require 'mechanize'
 require 'logger'
