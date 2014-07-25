@@ -2,7 +2,7 @@
 
 get ruby
 
-install gems `gem install mechanize`
+install gem `gem install mechanize`
 
 run `ruby whatfetcher.rb USERNAME PASSWORD`
 
