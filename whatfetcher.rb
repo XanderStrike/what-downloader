@@ -16,6 +16,8 @@ require 'logger'
 
 mech = Mechanize.new
 
+mech.user_agent_alias = 'Linux Firefox'
+
 # Login
 page = mech.get('http://what.cd/')
 page = mech.click page.link_with(text: /Log In/i)
