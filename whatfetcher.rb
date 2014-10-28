@@ -1,5 +1,6 @@
 # Whatfetcher
 #  alex standke
+#  june 2014
 #
 # Fetches the most recent torrents in your default torrent view page.
 #
@@ -12,10 +13,10 @@ end
 
 require 'rubygems'
 require 'mechanize'
-require 'logger'
 
 mech = Mechanize.new
 
+# Spoof Headers
 mech.user_agent_alias = 'Linux Firefox'
 
 # Login
@@ -25,9 +26,8 @@ form = page.forms[0]
 form.set_fields({username: ARGV[0], password: ARGV[1]})
 page = form.submit form.buttons.first
 
+# Download New Torrents
 page = mech.click page.link_with(:text => /Torrents/i)
-
-# Download the torrents
 page.links_with(text: 'DL').each do |l|
   torrent = mech.click l
   if File.exists?('torrents/' + torrent.filename)
