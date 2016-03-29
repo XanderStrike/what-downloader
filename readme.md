@@ -1,3 +1,5 @@
+**caution**: This script violates What.CD's golden rules. I don't use it any more, so use it with caution, and if you're going to use anything use the python version linked below as it's much more efficient and generates less load on What's servers.
+
 # TURN DOWN FOR WHAT
 
 get ruby
